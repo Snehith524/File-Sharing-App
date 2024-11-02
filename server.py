@@ -21,7 +21,6 @@ def send_file(filename):
         client_socket, client_address = server_socket.accept()
         print(f"Connected to client at {client_address}")
 
-        # Send filename and file size to client
         filesize = os.path.getsize(filename)
         client_socket.send(f"{filename}{SEPARATOR}{filesize}".encode())
 
